@@ -42,7 +42,6 @@ export default {
 <style scoped>
 .option {
    display: inline-block;
-   margin-bottom: 0.5em;
 }
 
 .check {
