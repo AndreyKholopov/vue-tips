@@ -1,28 +1,29 @@
 <template>
-   <div ref="wrapper" class="wrapper__button">
-      <button class="button">{{ text }}</button>
-   </div>
+   <button @click="click" :disabled="disabled" ref="button" class="button">
+      {{ text }}
+   </button>
 </template>
 
 <script>
 export default {
    props: {
       text: String,
+      fontSize: Number,
       width: Number,
-      height: Number
+      height: Number,
+      disabled: Boolean,
+      click: Function,
    },
    mounted() {
-      this.$refs.wrapper.style.width = `${this.width}px`
-      this.$refs.wrapper.style.height = `${this.height}px`
-   }
+      this.$refs.button.style.fontSize = `${this.fontSize}px`;
+      this.$refs.button.style.width = `${this.width}px`;
+      this.$refs.button.style.height = `${this.height}px`;
+   },
 };
 </script>
 
 <style scoped>
 .button {
-   width: 100%;
-   height: 100%;
-
    padding: 22px 28px 18px 28px;
    margin: 0;
 
@@ -30,7 +31,6 @@ export default {
    border-radius: 8px;
    outline: none;
 
-   font-size: 16px;
    text-transform: uppercase;
 
    background: rgb(13, 199, 240);
@@ -44,6 +44,8 @@ export default {
    cursor: pointer;
 }
 
+/* Focused, hovered */
+
 .button:hover,
 .button:focus {
    background: rgb(254, 133, 110);
@@ -55,6 +57,8 @@ export default {
    border-color: #d45270;
 }
 
+/* Active */
+
 .button:active {
    margin: 5px 0 -5px 0;
 
@@ -65,5 +69,23 @@ export default {
       rgba(167, 29, 115, 1) 100%
    );
    border-bottom: 3px solid #d45270;
+}
+
+/* Disabled */
+
+.button[disabled] {
+   opacity: 0.75;
+   cursor: auto;
+}
+
+.button[disabled]:hover,
+.button[disabled]:focus {
+   background: rgb(13, 199, 240);
+   background: linear-gradient(
+      180deg,
+      rgba(2, 53, 116, 1) 0%,
+      rgba(13, 199, 240, 1) 140%
+   );
+   border-color: #06669e;
 }
 </style>
