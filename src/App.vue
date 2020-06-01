@@ -1,6 +1,6 @@
 <template>
   <section class="page">
-    <myButton :click="click" :text="'button'" :fontSize="30" :width="500" :height="100" />
+    <myButton :click="click" :text="'button'" :fontSize="30" :width="500" />
     <p>{{ counter }}</p>
     <myCheckbox v-model="checked" :change="changeCheck" :fontSize="30" :text="'checkbox'" />
     <p>{{ changeCount }}</p>
