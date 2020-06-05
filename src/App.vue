@@ -2,6 +2,8 @@
   <section class="page">
     <myButton ripple :click="click" :text="'button'" color="#000" :fontSize="30" :width="500" />
     <p>{{ counter }}</p>
+    <myDivide rounded color='#999' />
+
     <myCheckbox
       v-model="checked"
       :change="changeCheck"
@@ -10,18 +12,22 @@
     />
     <p>{{ changeCount }}</p>
     <p>{{ checked }}</p>
+    <myDivide rounded color='#999' />
+    
   </section>
 </template>
 
 <script>
 import myButton from "./components/button.vue";
 import myCheckbox from "./components/checkbox/checkbox.vue";
+import myDivide from "./components/divide.vue";
 
 export default {
   name: "app",
   components: {
     myButton,
     myCheckbox,
+    myDivide
   },
   data() {
     return {

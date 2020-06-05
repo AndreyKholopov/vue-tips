@@ -1,3 +1,9 @@
+/* common styles */
+p {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
 /* ripples */
 .ripples {
 	position: absolute;
