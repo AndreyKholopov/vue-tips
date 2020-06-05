@@ -1,47 +1,54 @@
 <template>
   <section class="page">
-    <myButton :click="click" :text="'button'" :fontSize="30" :width="500" />
+    <myButton ripple :click="click" :text="'button'" color="#000" :fontSize="30" :width="500" />
     <p>{{ counter }}</p>
-    <myCheckbox v-model="checked" :change="changeCheck" :fontSize="30" :text="'checkbox'" />
+    <myCheckbox
+      v-model="checked"
+      :change="changeCheck"
+      :fontSize="30"
+      :text="'checkbox'"
+    />
     <p>{{ changeCount }}</p>
     <p>{{ checked }}</p>
   </section>
 </template>
 
 <script>
-import myButton from '@/components/button.vue'
-import myCheckbox from '@/components/checkbox/checkbox.vue'
+import myButton from "./components/button.vue";
+import myCheckbox from "./components/checkbox/checkbox.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     myButton,
-    myCheckbox
+    myCheckbox,
   },
-  data () {
+  data() {
     return {
       counter: 0,
       changeCount: 0,
-      checked: false    
-    }
+      checked: false,
+    };
   },
   methods: {
     click() {
-      this.counter++
+      this.counter++;
     },
     changeCheck() {
-      this.changeCount++
-    }
-  }
-}
+      this.changeCount++;
+    },
+  },
+};
 </script>
 
 <style>
-  body {
-    margin: 0;
-  }
+@import './components/mainCss.css';
 
-  .page {
-    margin: 15px;
-  }
+body {
+  margin: 0;
+}
+
+.page {
+  margin: 15px;
+}
 </style>
