@@ -28,36 +28,54 @@ export default {
     click: Function,
     loading: Boolean,
     color: String,
-		hoverColor: String,
-		ripple: Boolean
+    hoverColor: String,
+    ripple: Boolean,
+    round: Boolean,
   },
-	methods: {
-		rippleOnButton (e) {
-			let x = e.clientX - e.target.offsetLeft
-			let y = e.clientY - e.target.offsetTop
-			
-			let ripples = document.createElement('div')
+  methods: {
+    rippleOnButton(e) {
+      let x = e.clientX - e.target.offsetLeft;
+      let y = e.clientY - e.target.offsetTop;
 
-			ripples.style.left = x + 'px'
-			ripples.style.top = y + 'px'
+      let ripples = document.createElement("div");
 
-			this.$refs.button.appendChild(ripples).classList.add('ripples')
+      ripples.style.left = x + "px";
+      ripples.style.top = y + "px";
 
-			setTimeout(() => {
-				ripples.remove()
-			}, 1000);
-		}
-	},
+      this.$refs.button.appendChild(ripples).classList.add("ripples");
+
+      setTimeout(() => {
+        ripples.remove();
+      }, 1000);
+    },
+  },
   mounted() {
     this.$refs.button.style.fontSize = `${this.fontSize}px`;
-		this.$refs.button.style.maxWidth = `${this.width}px`;
-		
-		if (this.ripple) {
-			this.$refs.button.addEventListener('click', this.rippleOnButton)
-		}
+    this.$refs.button.style.maxWidth = `${this.width}px`;
 
-    this.$refs.button.style.setProperty('--main-button-color', `${this.color ? this.color : 'rgb(13, 199, 240)'}`)
-    this.$refs.button.style.setProperty('--hover-button-color', `${this.hoverColor ? this.hoverColor : this.color ? this.color : 'rgb(254, 133, 110)'}`)
+    if (this.ripple) {
+      this.$refs.button.addEventListener("click", this.rippleOnButton);
+    }
+
+    if (this.round) {
+      this.$refs.button.style.height = `${this.width}px`;
+      this.$refs.button.style.borderRadius = "50%";
+    }
+
+    this.$refs.button.style.setProperty(
+      "--main-button-color",
+      `${this.color ? this.color : "rgb(13, 199, 240)"}`
+    );
+    this.$refs.button.style.setProperty(
+      "--hover-button-color",
+      `${
+        this.hoverColor
+          ? this.hoverColor
+          : this.color
+          ? this.color
+          : "rgb(254, 133, 110)"
+      }`
+    );
   },
 };
 </script>
@@ -74,9 +92,9 @@ export default {
   min-width: min-content;
 
   border-radius: 8px;
-	border: none;
-	outline: none;
-	overflow: hidden;
+  border: none;
+  outline: none;
+  overflow: hidden;
 
   text-transform: uppercase;
 

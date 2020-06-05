@@ -77,8 +77,9 @@ export default {
   background-image: url(check.svg);
 }
 
-/* Focused */
+/* Focused, active */
 
+.check__input:active + .check__box,
 .check__input:focus + .check__box {
   box-shadow: 0 0 0 0.1em #4a90e2, 0 0 0 0.2em #7ed321;
 }
