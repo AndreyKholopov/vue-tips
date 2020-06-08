@@ -1,8 +1,15 @@
 <template>
   <section class="page">
-    <myButton ripple :click="click" :text="'button'" color="#000" :fontSize="30" :width="500" />
+    <myButton
+      ripple
+      :click="click"
+      text="button"
+      color="#000"
+      :fontSize="30"
+      :width="500"
+    />
     <p>{{ counter }}</p>
-    <myDivide rounded color='#999' />
+    <myDivide rounded color="#999" />
 
     <myCheckbox
       v-model="checked"
@@ -12,8 +19,10 @@
     />
     <p>{{ changeCount }}</p>
     <p>{{ checked }}</p>
-    <myDivide rounded color='#999' />
-    
+    <myDivide rounded color="#999" />
+
+    <myAnimateText clowing text="simple text" color="#000" :fontSize="30" />
+    <myDivide rounded color="#999" />
   </section>
 </template>
 
@@ -21,13 +30,15 @@
 import myButton from "./components/button.vue";
 import myCheckbox from "./components/checkbox/checkbox.vue";
 import myDivide from "./components/divide.vue";
+import myAnimateText from "./components/animateText.vue";
 
 export default {
   name: "app",
   components: {
     myButton,
     myCheckbox,
-    myDivide
+    myDivide,
+    myAnimateText,
   },
   data() {
     return {
@@ -48,13 +59,5 @@ export default {
 </script>
 
 <style>
-@import './components/mainCss.css';
-
-body {
-  margin: 0;
-}
-
-.page {
-  margin: 15px;
-}
+@import "./components/mainCss.css";
 </style>

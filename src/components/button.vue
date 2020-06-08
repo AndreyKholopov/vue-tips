@@ -80,6 +80,37 @@ export default {
 };
 </script>
 
+<style>
+/* ripples */
+.button .ripples {
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  pointer-events: none;
+  animation: animate-ripples 1s linear infinite;
+}
+
+@keyframes animate-ripples {
+  0% {
+    width: 0;
+    height: 0;
+
+    opacity: 0.5;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+
+    opacity: 0;
+  }
+}
+</style>
+
 <style scoped>
 .button {
   position: relative;
