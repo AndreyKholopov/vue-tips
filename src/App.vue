@@ -21,7 +21,10 @@
     <p>{{ checked }}</p>
     <myDivide rounded color="#999" />
 
-    <myAnimateText clowing text="simple text" color="#000" :fontSize="30" />
+    <myAnimateText wavy click text="simple text" color="#000" :fontSize="30" />
+    <myDivide rounded color="#999" />
+
+    <myAnalogClock width="100" />
     <myDivide rounded color="#999" />
   </section>
 </template>
@@ -31,6 +34,7 @@ import myButton from "./components/button.vue";
 import myCheckbox from "./components/checkbox/checkbox.vue";
 import myDivide from "./components/divide.vue";
 import myAnimateText from "./components/animateText.vue";
+import myAnalogClock from "./components/analogClock/analogClock.vue";
 
 export default {
   name: "app",
@@ -39,6 +43,7 @@ export default {
     myCheckbox,
     myDivide,
     myAnimateText,
+    myAnalogClock
   },
   data() {
     return {
