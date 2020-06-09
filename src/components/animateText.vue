@@ -22,7 +22,7 @@ export default {
     wavy: Boolean,
     clowing: Boolean,
     clowingColor: String,
-    click: Boolean,
+    click: Boolean
   },
   data() {
     return {
@@ -31,6 +31,7 @@ export default {
   },
   methods: {
     startAnimation() {
+      // wavy effect on click
       if (this.wavy) {
         if (this.check) {
           this.check = false;
@@ -47,6 +48,8 @@ export default {
             element.classList.add("wavy");
           }
         }
+
+      // clowing effect on click
       } else if (this.clowing) {
         if (this.check) {
           this.check = false;

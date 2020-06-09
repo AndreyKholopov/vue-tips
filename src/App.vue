@@ -24,7 +24,10 @@
     <myAnimateText wavy click text="simple text" color="#000" :fontSize="30" />
     <myDivide rounded color="#999" />
 
-    <myAnalogClock width="100" />
+    <myAnalogClock width="200" faceColor="#cc3333" />
+    <myDivide rounded color="#999" />
+
+    <myGlitchText glitch click text="simple text" />
     <myDivide rounded color="#999" />
   </section>
 </template>
@@ -35,6 +38,7 @@ import myCheckbox from "./components/checkbox/checkbox.vue";
 import myDivide from "./components/divide.vue";
 import myAnimateText from "./components/animateText.vue";
 import myAnalogClock from "./components/analogClock/analogClock.vue";
+import myGlitchText from "./components/glitchText.vue";
 
 export default {
   name: "app",
@@ -43,7 +47,8 @@ export default {
     myCheckbox,
     myDivide,
     myAnimateText,
-    myAnalogClock
+    myAnalogClock,
+    myGlitchText,
   },
   data() {
     return {
