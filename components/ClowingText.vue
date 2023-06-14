@@ -26,7 +26,7 @@ export default {
     },
     fontSize: {
       type: Number,
-      default: 15,
+      default: 20,
     },
     clowing: {
       type: Boolean,

@@ -22,7 +22,7 @@ export default {
     },
     fontSize: {
       type: Number,
-      default: 12,
+      default: 16,
     },
     disabled: {
       type: Boolean,
