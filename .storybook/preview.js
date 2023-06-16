@@ -1,4 +1,5 @@
-import { Title, Subtitle, Description, Primary, Controls } from '@storybook/blocks';
+
+import DocumentationTemplate from './DocumentationTemplate.mdx';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -7,16 +8,8 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
-    docs: {
-      page: () => (
-        <>
-          <Title />
-          <Subtitle />
-          <Description />
-          <Primary />
-          <Controls />
-        </>
-      ),
-    },
   },
+  docs: {
+    page: DocumentationTemplate
+  }
 }
